@@ -1,0 +1,21 @@
+﻿{
+  "IsEnabled": "false",
+  "IP": "192.168.1.65",
+  "Port": 3333,
+  "Password": "mps",
+  "IntervalCheck": "00:00:12",
+  "RestartIfNotResponce": "true",
+  "DependencyProcess": {
+    "Name": "EthDcrMiner64.exe",
+    "Exec": "C:\\mining\\Claymores Dual Ethereum+Decred_Siacoin_Lbry_Pascal AMD+NVIDIA GPU Miner v11.0\\EthDcrMiner64.exe",
+    "Parameters": "-di 01234  -epool stratum+tcp://daggerhashimoto.eu.nicehash.com:3353 -ewal 1BzAx1nB6eifzSSBiTr3uYohRjZjva7j3x.mosk -mport 127.0.0.1:-4001 -esm 3 -epsw x -allpools 1 -dcoin lbc -dpool stratum+tcp://lbry.eu.nicehash.com:3356 -dwal 1BzAx1nB6eifzSSBiTr3uYohRjZjva7j3x.mosk -dpsw x -dbg -1 -mport 192.168.1.70:3333 -mpsw mps -wd 1",
+    "WatchDog": "true",
+    "EnvVariable": {
+      "GPU_FORCE_64BIT_PTR": "Value",
+      "GPU_MAX_HEAP_SIZE": "100",
+      "GPU_USE_SYNC_OBJECTS": "1",
+      "GPU_MAX_ALLOC_PERCENT": "100",
+      "GPU_SINGLE_ALLOC_PERCENT": "100"
+    }
+  }
+}

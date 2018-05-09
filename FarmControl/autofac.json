@@ -1,0 +1,44 @@
+﻿{
+  "components": [
+    {
+      "type": "AutobernerController.AutobernerController, AutobernerController",
+      "services": [
+        {
+          "type": "BaseController.IBaseController, BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    },
+    {
+      "type": "EthernetController.EthernetController, EthernetController",
+      "services": [
+        {
+          "type": "BaseController.IBaseController, BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    },
+    {
+      "type": "MinerController.MinerController, MinerController",
+      "services": [
+        {
+          "type": "BaseController.IBaseController, BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    },
+    {
+      "type": "ProcessController.ProcessController, ProcessController",
+      "services": [
+        {
+          "type": "BaseController.IBaseController, BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    }
+  ]
+}

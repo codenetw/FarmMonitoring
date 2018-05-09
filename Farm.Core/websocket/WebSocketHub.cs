@@ -1,0 +1,79 @@
+﻿using System.Linq;
+using System.Reflection;
+using System.Threading;
+using log4net;
+using Newtonsoft.Json;
+using WebSocketSharp;
+using WebSocketSharp.Server;
+
+namespace Farm.Core.Common
+{
+    public class WebSocketHub<T> : WebSocketBehavior
+    {
+        protected static readonly ILog _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        protected readonly CancellationTokenSource _ctxCancellationToken = new CancellationTokenSource();
+        private readonly string _hubName;
+        private static readonly SpecificConcurrentDictionary<WebSocketSessionManager> ConcurrentSession = new SpecificConcurrentDictionary<WebSocketSessionManager>();
+     
+        protected WebSocketHub()
+        {
+            _hubName = typeof(T).Name;
+        }
+
+        protected override void OnError(WebSocketSharp.ErrorEventArgs errorEventArgs)
+        {
+            ConcurrentSession.Remove(GetUniqCurrentSession);
+            _logger.Error($"{GetUniqCurrentSession} with error: {errorEventArgs.Exception.Message}");
+            base.OnError(errorEventArgs);
+        }
+
+        protected override void OnClose(CloseEventArgs e)
+        {
+            ConcurrentSession.Remove(GetUniqCurrentSession);
+            _logger.Info($"{GetUniqCurrentSession} closed with reason: {e.Reason}");
+            base.OnClose(e);
+        }
+
+        protected override void OnOpen()
+        {
+            ConcurrentSession.Add(GetUniqCurrentSession, Sessions);
+            _logger.Info($"{GetUniqCurrentSession} opened");
+            base.OnOpen();
+        }
+
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            _logger.Info($"{GetUniqCurrentSession} receive message");
+            base.OnMessage(e);
+        }
+
+        protected void BroadcastMessage(object data)
+        {
+            var name = data.GetType().Name;
+            var objSeria = JsonConvert.SerializeObject(new {MessageType = name, Data = data });
+            var activeSession = ConcurrentSession[GetUniqCurrentSession].FirstOrDefault();
+            activeSession?.BroadcastAsync(objSeria, () =>
+            {
+                if (_logger.IsDebugEnabled)
+                    _logger.Debug($"{GetUniqCurrentSession}> broadcast compleated: {objSeria}");
+            });
+        }
+
+        protected void SendToAsync(string session, object data)
+        {
+            var name = data.GetType().Name;
+            var objSeria = JsonConvert.SerializeObject(new { MessageType = name, Data = data });
+            var activeSession = ConcurrentSession[GetUniqCurrentSession].FirstOrDefault();
+            var dotIndex = session.IndexOf('.');
+            if (dotIndex != -1)
+                session = session.Skip(dotIndex).ToString();
+            if(string.IsNullOrWhiteSpace(session))
+                return;
+
+            activeSession.SendToAsync(objSeria, session, null);
+        }
+        
+        private string GetUniqCurrentSession => $"{_hubName}.{ID}";
+
+    }
+}

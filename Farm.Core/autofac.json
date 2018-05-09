@@ -1,0 +1,62 @@
+﻿{
+  "modules": [
+    {
+      "type": "Farm.AutobernerController.AutofacModule, Farm.AutobernerController",
+      "properties": {}
+    },
+    {
+      "type": "Farm.EthernetController.AutofacModule, Farm.EthernetController",
+      "properties": {}
+    },
+    {
+      "type": "Farm.MinerController.AutofacModule, Farm.MinerController",
+      "properties": {}
+    },
+    {
+      "type": "Farm.ProcessController.AutofacModule, Farm.ProcessController",
+      "properties": {}
+    }
+  ],
+  "components": [
+    {
+      "type": "Farm.AutobernerController.AutobernerController, Farm.AutobernerController",
+      "services": [
+        {
+          "type": "Farm.BaseController.IBaseController, Farm.BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    },
+    {
+      "type": "Farm.EthernetController.EthernetController, Farm.EthernetController",
+      "services": [
+        {
+          "type": "Farm.BaseController.IBaseController, Farm.BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    },
+    {
+      "type": "Farm.MinerController.MinerController, Farm.MinerController",
+      "services": [
+        {
+          "type": "Farm.BaseController.IBaseController, Farm.BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    },
+    {
+      "type": "Farm.ProcessController.ProcessController, Farm.ProcessController",
+      "services": [
+        {
+          "type": "Farm.BaseController.IBaseController, Farm.BaseController"
+        }
+      ],
+      "instanceScope": "singleinstance",
+      "parameters": {}
+    }
+  ]
+}

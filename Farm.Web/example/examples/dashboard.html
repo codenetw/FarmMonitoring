@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Farm monitoring</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar-0.jpg">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="#" class="simple-text">
+                        FARM MONITOR
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Дашборд</p>
+                        </a>
+                    </li>          
+                    <li>
+                        <a class="nav-link" href="./typography.html">
+                            <i class="nc-icon nc-settings-gear-64"></i>
+                            <p>Настройки</p>
+                        </a>
+                    </li>
+                   <li>
+                        <a class="nav-link" href="./maps.html">
+                            <i class="nc-icon nc-preferences-circle-rotate"></i>
+                            <p>Модератор</p>
+                        </a>
+                    </li>                   
+                    <li>
+                        <a class="nav-link" href="./icons.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Логи</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+       
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                      <!-- info -->
+                   <div class="row">
+                        <div class="col-md-3">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">Ошибки</h4>
+                                    <p class="card-category">сбои в работе майнера</p>
+                                </div>
+                                <div class="card-body ">
+                                   56
+                                </div>
+                                <div class="card-footer ">                               
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-clock-o"></i> Обновлено 20 сек назад
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <h4 class="card-title">Общий хэшрейт</h4>
+                                    <p class="card-category">Хэшрейт доыбваемых валют</p>
+                                </div>
+                                <div class="card-body ">
+                                </div>
+                                <div class="card-footer ">                                   
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Обновлено 20 сек назад
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                              <div class="col-md-3">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <h4 class="card-title">Перезагрузки</h4>
+                                    <p class="card-category">Кол-во перезагрузок</p>
+                                </div>
+                                <div class="card-body ">
+                                </div>
+                                <div class="card-footer ">                                   
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Обновлено 15 сек назад
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-md-3">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <h4 class="card-title">Общий хэшрейт</h4>
+                                    <p class="card-category">Хэшрейт добываемых валют</p>
+                                </div>
+                                <div class="card-body ">
+                                </div>
+                                <div class="card-footer ">                                   
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Обновлено 25 сек назад
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+                    </div>
+                     <!-- end info -->
+                     <!-- cards -->
+                   <div class="row ">
+                        
+                        <div class="col-md-12">
+                         <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">Состояние видеокарт</h4>
+                                    <p class="card-category">текущее состояние</p>
+                                </div>
+                                <div class="card-body ">
+                                    <div id="chartHours" class="ct-chart"></div>
+                                </div>
+                                <div class="card-footer ">
+                                  <div class="bs-example">
+                                    <div class="btn-group btn-group-justified">
+                                        <a href="#" class="btn btn-primary">Left</a>
+                                        <a href="#" class="btn btn-primary">Middle</a>
+                                        <a href="#" class="btn btn-primary">Right</a>
+                                    </div>
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- end cards -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">Состояние видеокарт</h4>
+                                    <p class="card-category">текущее состояние</p>
+                                </div>
+                                <div class="card-body ">
+                                    <div id="chartHours" class="ct-chart"></div>
+                                </div>
+                                <div class="card-footer ">
+                                  
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">Состояние видеокарт</h4>
+                                    <p class="card-category">текущее состояние</p>
+                                </div>
+                                <div class="card-body ">
+                                    <div id="chartHours" class="ct-chart"></div>
+                                </div>
+                                <div class="card-footer ">
+                                   
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card ">
+                                <div class="card-header ">
+                                    <h4 class="card-title">2017 Sales</h4>
+                                    <p class="card-category">All products including Taxes</p>
+                                </div>
+                                <div class="card-body ">
+                                    <div id="chartActivity" class="ct-chart"></div>
+                                </div>
+                                <div class="card-footer ">
+                                    <div class="legend">
+                                        <i class="fa fa-circle text-info"></i> Tesla Model S
+                                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-check"></i> Data information certified
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card  card-tasks">
+                                <div class="card-header ">
+                                    <h4 class="card-title">Задчи модератора</h4>
+                                    <p class="card-category">задачи сверки работоспособности фермы</p>
+                                </div>
+                                <div class="card-body ">
+                                    <div class="table-full-width">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" value="">
+                                                                <span class="form-check-sign"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" value="" checked>
+                                                                <span class="form-check-sign"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" value="" checked>
+                                                                <span class="form-check-sign"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                                    </td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" checked>
+                                                                <span class="form-check-sign"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" value="">
+                                                                <span class="form-check-sign"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Read "Following makes Medium better"</td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="checkbox" value="" disabled>
+                                                                <span class="form-check-sign"></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>Unfollow 5 enemies from twitter</td>
+                                                    <td class="td-actions text-right">
+                                                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-link">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-footer ">
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="../assets/js/plugins/bootstrap-switch.js"></script>
+<!--  Chartist Plugin  -->
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
+<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+<script src="../assets/js/wsocket.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        ws.connect();
+    });
+</script>
+
+</html>

@@ -1,0 +1,61 @@
+﻿{
+  "AutobernerConfigure": {
+    "IsEnabled": "true",
+    "WatchDog": "true",
+    "MonitoringInterval": "00:00:02",
+    "DependencyProcess": {
+      "Name": "Notepad",
+      "Exec": "c:\\windows\\notepad.exe",
+      "Parameters": "",
+      "WatchDog": "true",
+      "EnvVariable": {}
+    },
+    "ActualConfigCards": [
+      {
+        "Id": 0,
+        "Voltage": -50,
+        "TempLimit": 50,
+        "PowerLimit": 90,
+        "CoreClock": 1100,
+        "MemoryClock": 2100,
+        "FanSpeed": 65
+      },
+      {
+        "Id": 1,
+        "Voltage": -50,
+        "TempLimit": 50,
+        "PowerLimit": 90,
+        "CoreClock": 1100,
+        "MemoryClock": 2100,
+        "FanSpeed": 65
+      },
+      {
+        "Id": 2,
+        "Voltage": -50,
+        "TempLimit": 50,
+        "PowerLimit": 90,
+        "CoreClock": 1100,
+        "MemoryClock": 2100,
+        "FanSpeed": 65
+      },
+      {
+        "Id": 3,
+        "Voltage": -50,
+        "TempLimit": 50,
+        "VoltageLimit": 90,
+        "CoreClock": 1100,
+        "MemoryClock": 2100,
+        "FanSpeed": 65
+      },
+      {
+        "Id": 4,
+        "Voltage": -50,
+        "TempLimit": 50,
+        "PowerLimit": 90,
+        "CoreClock": 1100,
+        "MemoryClock": 2100,
+        "FanSpeed": 65
+      }
+    ]
+  }
+}

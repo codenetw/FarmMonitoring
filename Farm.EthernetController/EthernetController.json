@@ -1,0 +1,10 @@
+﻿{
+  "IsEnabled": "true",
+  "RetryCount": 15,
+  "AddressCheck": "1.1.1.1",
+  "IntervalCheck": "00:00:12",
+  "ResetIfLost": "true",
+  "AdapterList": [],
+  "ResetDelay": "00:00:12",
+  "RestoreTool": {}
+}

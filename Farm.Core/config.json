@@ -1,0 +1,39 @@
+{
+  "WepApiPort": 81,
+  "Debug": "true",
+  "WebSocketPort": 2012,
+  "Coins": ["ETH", "DCR"],
+  "Cards": [],
+  "WebApiTranslateMessages": [
+    "AutobernerStopWatchingMessage",
+    "AutobernerTempCardsInfoMessage",
+    "AutobernerCardsPathInfoMessage",
+    "AutobernerVoltageCardsInfoMessage",
+    "AutobernerInformationMessage",
+    "MinerStatistics",
+    "ConnectionOk",
+    "ConnectionLost"
+  ],
+  "ActiveControllers": [
+    {
+      "Name": "ProcessController",
+      "Order": 0,
+      "Enabled": true
+    },
+    {
+      "Name": "AutobernerController",
+      "Order": 1,
+      "Enabled": true
+    },
+    {
+      "Name": "EthernetController",
+      "Order": 2,
+      "Enabled": true
+    },
+    {
+      "Name": "MinerController",
+      "Order": 3,
+      "Enabled": true
+    }
+  ]
+}

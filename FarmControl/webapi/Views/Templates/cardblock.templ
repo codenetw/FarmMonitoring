@@ -1,0 +1,45 @@
+﻿<div class='col-sm-4 col-lg-3' style='min-width: 300px !important;'> <div class='card box-shadow mb-4' data-value='vd{key}'> 
+    <div class= 'card-header'><span id='master_flag_{key}' class="label label-success">Главная</span>card №{key}<label class=' float-right  checkbox-inline checbox-switch switch-success'><input type='checkbox' name=''  checked='' /><span></span></label></div> 
+    <div class='card-body'>
+      <ul class="list-group list-group-flush">
+
+     
+        <li class="list-group-item">
+        V: <div class='well float-right' > 
+              <input id='sl_v_{key}' type='text' data-slider-ticks="[{VoltageMin}, {VoltageMax}]" data-slider-ticks-labels='[{VoltageMin}, {VoltageMax}]'  data-slider-min='{VoltageMin}' data-slider-max='{VoltageMax}' data-slider-step='1' data-slider-value='{VoltageCurrent}' data-slider-tooltip='show' />
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        PL: <div class='well float-right'  > 
+            <input id='sl_pl_{key}' type='text' data-slider-ticks="[{PowerLimitMin}, {PowerLimitMax}]" data-slider-ticks-labels='[{PowerLimitMin}, {PowerLimitMax}]' data-slider-min='{PowerLimitMin}' data-slider-max='{PowerLimitMax}' data-slider-step='1' data-slider-value='{PowerLimitCurrent}' data-slider-tooltip='show'  />
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        TL: <div class='well float-right'  > 
+            <input id='sl_tl_{key}' type='text' data-slider-ticks="[{TempLimitMin}, {TempLimitMax}]" data-slider-ticks-labels='[{TempLimitMin}, {TempLimitMax}]' data-slider-min='{TempLimitMin}' data-slider-max='{TempLimitMax}' data-slider-step='1' data-slider-value='{TempLimitCurrent}' />
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        Cc: <div class='well float-right'  >
+            <input id='sl_cc_{key}' type='text' data-slider-ticks="[{CoreClockMin}, {CoreClockMax}]" data-slider-ticks-labels='[{CoreClockMin}, {CoreClockMax}]' data-slider-min='{CoreClockMin}' data-slider-max='{CoreClockMax}' data-slider-step='1' data-slider-value='{CoreClockCurrent}'   />
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        Mc: <div class='well float-right'  >
+            <input id='sl_mc_{key}' type='text' data-slider-ticks="[{MemoryClockMin}, {MemoryClockMax}]" data-slider-ticks-labels='[{MemoryClockMin}, {MemoryClockMax}]' data-slider-min='{MemoryClockMin}' data-slider-max='{MemoryClockMax}' data-slider-step='1' data-slider-value='{MemoryClockCurrent}' />
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        Fs: <div class='well float-right'  >
+            <input id='sl_fs_{key}' type='text' data-slider-ticks="[{FanSpeedMin}, {FanSpeedMax}]" data-slider-ticks-labels='[{FanSpeedMin}, {FanSpeedMax}]' data-slider-min='{FanSpeedMin}' data-slider-max='{FanSpeedMax}' data-slider-step='1' data-slider-value='{FanSpeedCurrent}'  /> 
+        </div>
+        </li> 
+      </ul>
+    </div>
+	 </div>
+</div>

@@ -1,0 +1,11 @@
+﻿{
+  "cards": {
+    "CardCode": "...",
+    "CardName": "" ,
+    "Loss": 0,
+    "MainCard": 0,
+    "MineFailure": 0,
+    "BladeCard": 0,
+    "ResetFrequencies": 0
+  }
+}

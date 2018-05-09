@@ -1,0 +1,11 @@
+﻿{
+  "ReadOnlyCards": "true",
+  "MonitoringInterval": "00:00:05",
+  "DependencyProcess": {
+    "Name": "MSIAfterburner",
+    "Exec": "C:\\Program Files (x86)\\MSI Afterburner\\MSIAfterburner.exe",
+    "Parameters": "",
+    "WatchDog": "true",
+    "EnvVariable": {}
+  }
+}
